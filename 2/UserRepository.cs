@@ -19,7 +19,7 @@ namespace KnuteTask2._2
 			{
 				throw new ArgumentNullException(nameof(condition));
 			}
-			return Users.Where(condition).FirstOrDefault();			
+			return Users.FirstOrDefault(condition);			
 		}
 
 		public static void AddUser(User user)

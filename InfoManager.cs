@@ -16,7 +16,7 @@ namespace KnuteTask2
 					.GetCustomAttributes(typeof(DescriptionAttribute), true)
 					.Cast<DescriptionAttribute>()
 					.FirstOrDefault();
-				var name = prop.Name;
+				string name = prop.Name;
 				if (attribute != null)
 				{
 					name = attribute.Description;

@@ -8,6 +8,7 @@ namespace KnuteTask2
 {
 	public static class TasksFacade
 	{
+		#region Завдання 1
 		public static void StartTask1()
 		{
 			initializePersons();
@@ -19,7 +20,9 @@ namespace KnuteTask2
 				new List<Person> { new Person(), new Person(), new Person(), new Person() };
 			}
 		}
+		#endregion
 
+		#region Завдання 2
 		public static void StartTask2()
 		{
 			var usersToAdd = new User[]
@@ -37,7 +40,9 @@ namespace KnuteTask2
 			manager.ShowUserInfo(user => user.Name == "Алексей" && user.Id == 99);
 			manager.ShowUserInfo(user => user.Name == "Денис" && user.LastName == "Дьяков");
 		}
+		#endregion
 
+		#region Завдання 3
 		public static void StartTask3()
 		{
 			var juniorDeveloper = new Employee("Алексей", new DateTime(2021, 8, 10), 500);
@@ -56,8 +61,10 @@ namespace KnuteTask2
 				Console.WriteLine("Ім'я - {0}\nПотрібно виплатити - {1:C}", name, salary);
 			}
 		}
+		#endregion
 
-		public static void StartTask4()
+		#region Завдання 4-5
+		public static void StartTask4And5()
 		{
 			var persons = new List<_4.Person>
 			{ 
@@ -66,6 +73,12 @@ namespace KnuteTask2
 				new _4.Person("Казимир", "Казимирович")
 			};
 			persons.ForEach(person => person.ShowInfo());
+		}
+		#endregion
+
+		public static void StartTask6()
+		{
+
 		}
 	}
 }
