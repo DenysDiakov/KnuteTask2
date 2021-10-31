@@ -5,7 +5,7 @@ namespace KnuteTask2
 	class Program
 	{
 		static void Main(string[] args)
-		{		
+		{
 			writeTaskNumber(1);
 			TasksFacade.StartTask1();
 

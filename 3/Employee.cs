@@ -8,7 +8,7 @@ namespace KnuteTask2._3
 	{
 		public string Name { get; private set; }
 
-		public DateTime HiringDate { get; set; }
+		public DateTime HiringDate { get; private set; }
 
 		public decimal Salary { get; private set; }
 

@@ -1,5 +1,7 @@
 ﻿using KnuteTask2._2;
 using KnuteTask2._3;
+using KnuteTask2._6;
+using KnuteTask2._6.Products;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -78,7 +80,14 @@ namespace KnuteTask2
 
 		public static void StartTask6()
 		{
+			var customer = new Customer("Анатолий", "Залупкин", 18, 4, 100);
 
+			var productsTobuy = new List<Product> { new Laptop(), new Smartphone(), new Laptop() };
+
+			productsTobuy.ForEach(customer.AddToCart);
+			customer.ApplyDiscount(100);
+
+			customer.ShowInfo();
 		}
 	}
 }
