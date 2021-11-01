@@ -15,7 +15,7 @@ namespace KnuteTask2._6
 		public int Age { get; private set; }
 
 		[DrillDown]
-		public Card Card { get; set; }
+		public Card Card { get; private set; }
 
 		[DrillDown]
 		public ShoppingCart ShoppingCart { get; private set; }
@@ -47,33 +47,20 @@ namespace KnuteTask2._6
 			ShoppingCart.RemoveFromCart(product);
 		}
 
-		public void ApplyDiscount(int bonusesAmount = 0)
+		public void ApplyDiscount(decimal bonusAmount = 0)
 		{
-			if (bonusesAmount > Card.BonusAmount)
+			decimal bonusToSpend = bonusAmount == 0 ? Card.BonusAmount : bonusAmount;
+			if (bonusToSpend > Card.BonusAmount)
 			{
-				throw new Exception("Не можливо списати більше бонусів, чим є");
+				bonusToSpend = Card.BonusAmount;
 			}
-			ShoppingCart.CalculateFinalSum(bonusesAmount == 0 ? Card.BonusAmount : bonusesAmount);
+			Card.SpendBonus(bonusToSpend);
+			ShoppingCart.CalculateFinalSum(bonusToSpend);
 		}
 
 		public void ShowInfo()
 		{
 			InfoManager.ShowModelInfo(this);
 		}
-	}
-
-	public class Card
-	{
-		[Description("Номер карти лояльності")]
-		public int Number { get; set; }
-
-		[Description("Кількість бонусів")]
-		public int BonusAmount { get; set; }
-
-		public Card(int number, int bonusAmount) 
-		{
-			Number = number;
-			BonusAmount = bonusAmount;
-		}
-	}
+	}	
 }

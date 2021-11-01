@@ -18,10 +18,12 @@ namespace KnuteTask2
 			var drillDownType = typeof(DrillDownAttribute);
 			if (onlyPropertiesWithAttributes)
 			{
-				properties = properties.Where(prop => attributeDefined(prop, disctriptionType) || attributeDefined(prop, drillDownType)).ToArray();
+				properties = properties.Where(prop => 
+				attributeDefined(prop, disctriptionType) ||	attributeDefined(prop, drillDownType)).ToArray();
 			}
 			foreach (var prop in properties)
 			{
+				// Вивести інформацію про властивості моделі поміченої атрибутом DrillDown
 				if (attributeDefined(prop, drillDownType))
 				{
 					var value = prop.GetValue(obj, null);

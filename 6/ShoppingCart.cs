@@ -11,7 +11,7 @@ namespace KnuteTask2._6
 		[Description("Сумма")]
 		public decimal Sum { get => Items.Sum(product => product.Price); }
 
-		[Description("Фінальна сумма")]
+		[Description("До сплати")]
 		public decimal FinalSum { get; private set; }
 
 		public ShoppingCart()
@@ -29,7 +29,7 @@ namespace KnuteTask2._6
 			Items.Remove(product);
 		}
 
-		public void CalculateFinalSum(int bonuses)
+		public void CalculateFinalSum(decimal bonuses)
 		{
 			FinalSum = Sum - bonuses;
 		}
