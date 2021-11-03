@@ -12,7 +12,6 @@ namespace KnuteTask2._2
 				Console.WriteLine("Такого користувача не існує!");
 				return;
 			}
-
 			InfoManager.ShowModelInfo(user);			
 		}
 	}

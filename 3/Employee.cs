@@ -38,7 +38,7 @@ namespace KnuteTask2._3
 
 		private static decimal sumOfSalaryAndPremium(decimal salary)
 		{
-			decimal premium = (salary / 3);
+			decimal premium = salary / 3;
 			return salary + premium;
 		}
 	}

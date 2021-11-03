@@ -49,11 +49,7 @@ namespace KnuteTask2._6
 
 		public void ApplyDiscount(decimal bonusAmount = 0)
 		{
-			decimal bonusToSpend = bonusAmount == 0 ? Card.BonusAmount : bonusAmount;
-			if (bonusToSpend > Card.BonusAmount)
-			{
-				bonusToSpend = Card.BonusAmount;
-			}
+			decimal bonusToSpend = bonusAmount == 0 || bonusAmount > Card.BonusAmount ? Card.BonusAmount : bonusAmount;			
 			Card.SpendBonus(bonusToSpend);
 			ShoppingCart.CalculateFinalSum(bonusToSpend);
 		}
